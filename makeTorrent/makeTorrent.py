@@ -105,7 +105,7 @@ class makeTorrent:
             info_pieces += sha1(data).digest()
         self.tdict['info'].update(
             {
-                'name': basePath,
+                'name': path.basename(realPath),
                 'files': fileList,
                 'pieces': info_pieces
             }
