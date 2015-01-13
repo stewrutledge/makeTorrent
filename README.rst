@@ -9,7 +9,9 @@ A basic python library for generating single and multi-file torrents.
 Usage
 =====
 
-Basic usage::
+Basic usage:
+
+.. code-block:: python
 
     from makeTorrent import makeTorrent
 
@@ -18,7 +20,9 @@ Basic usage::
 
 At this point the makeTorrent class contains a dictionary, which can be printed either as a dict or as a bencoded string (torrent format).
 
-To add files, use either the multi_file class or the single_file class::
+To add files, use either the multi_file class or the single_file class:
+
+.. code-block:: python
 
     mk.multi_file('/path/to/directory')
 
@@ -30,8 +34,9 @@ The same method can be used with `mk.single_file` with just pointing out a singl
 Notes
 =====
 
-There are a number of items that can be added when initializing the class::
+There are a number of items that can be added when initializing the class:
 
+.. code-block:: python
 
     mk = makeTorrent(
         announce='http://example.com/announce',
