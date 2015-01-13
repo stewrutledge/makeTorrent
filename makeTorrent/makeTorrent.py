@@ -114,6 +114,12 @@ class makeTorrent:
         #return(info_pieces, fileList)
 
     def single_file(self, fileName, check_md5=False):
+        """
+        Creates a torrent containing one file
+          fileName: file to create torrent from
+          check_md5: add md5sum to torrent
+        Torrent name will be filename
+        """
         if 'files' in self.tdict['info']:
             raise TypeError('Cannot add single file to multi-file torrent')
         info_pieces = ''
