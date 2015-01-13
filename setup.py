@@ -2,8 +2,11 @@ from distutils.core import setup
 
 setup(
     name='makeTorrent',
-    version='0.1',
+    version='0.11',
     packages=['makeTorrent'],
+    install_requires=[
+        'bencode',
+    ],
     license='Creative Commons Attribution-Noncommercial-Share Alike license',
     description='Basic library for creating torrents',
     long_description=open('README.rst').read(),
