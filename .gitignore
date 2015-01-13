@@ -1,5 +1,4 @@
 *.pyc
-MANIFEST
 dist/
 .DS_STORE
 build/
