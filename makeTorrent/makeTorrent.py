@@ -72,6 +72,7 @@ class makeTorrent:
             for f in files:
                 subPath = path.relpath(root, start=realPath).split('/')
                 subPath.append(f)
+                subPath = [str(p) for p in subPath]
                 toGet.append(subPath)
         for pathList in toGet:
             length = 0
@@ -88,7 +89,6 @@ class makeTorrent:
 
                     if len(filedata) == 0:
                         break
-
                     length += len(filedata)
 
                     data += filedata
