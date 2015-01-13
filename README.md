@@ -4,7 +4,6 @@ makeTorrent
 
 A basic python library for generating single and multi-file torrents.
 
-This is VERY much a work in progress.
 
 Usage
 -----
