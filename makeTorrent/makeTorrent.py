@@ -130,7 +130,6 @@ class makeTorrent:
         data = ''
         realPath = path.abspath(fileName)
         length = 0
-        print length
         if check_md5:
             md5sum = md5()
         with open(realPath) as fn:
@@ -141,7 +140,6 @@ class makeTorrent:
                     break
 
                 length += len(filedata)
-                print length
 
                 data += filedata
 
