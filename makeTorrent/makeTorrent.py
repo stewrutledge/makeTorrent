@@ -49,6 +49,9 @@ class makeTorrent:
     def getDict(self):
         return(self.tdict)
 
+    def info_hash(self):
+        return(sha1(bencode(self.tdict['info'])).hexdigest())
+
     def getBencoded(self):
         return(bencode(self.tdict))
 
@@ -110,7 +113,8 @@ class makeTorrent:
                 'pieces': info_pieces
             }
         )
-        return('Updated')
+        info_hash = sha1(bencode(self.tdict['info'])).hexdigest()
+        return({'Created': info_hash})
         #return(info_pieces, fileList)
 
     def single_file(self, fileName, check_md5=False):
@@ -125,7 +129,8 @@ class makeTorrent:
         info_pieces = ''
         data = ''
         realPath = path.abspath(fileName)
-        length = len(open(realPath).read())
+        length = 0
+        print length
         if check_md5:
             md5sum = md5()
         with open(realPath) as fn:
@@ -136,6 +141,7 @@ class makeTorrent:
                     break
 
                 length += len(filedata)
+                print length
 
                 data += filedata
 
@@ -161,4 +167,5 @@ class makeTorrent:
                     'md5sum': md5sum.hexdigest()
                 }
             )
-        return('Updated')
+        info_hash = sha1(bencode(self.tdict['info'])).hexdigest()
+        return({'Created': info_hash})
