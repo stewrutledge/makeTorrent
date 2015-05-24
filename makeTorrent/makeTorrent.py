@@ -84,9 +84,9 @@ class makeTorrent:
                 md5sum = md5()
             fileDict = {
                 'path': pathList,
-                'length': len(open(path.join(basePath, filePath)).read())
+                'length': len(open(path.join(basePath, filePath), "rb").read())
             }
-            with open(path.join(basePath, filePath)) as fn:
+            with open(path.join(basePath, filePath), "rb") as fn:
                 while True:
                     filedata = fn.read(self.piece_length)
 
@@ -132,7 +132,7 @@ class makeTorrent:
         length = 0
         if check_md5:
             md5sum = md5()
-        with open(realPath) as fn:
+        with open(realPath, "rb") as fn:
             while True:
                 filedata = fn.read(self.piece_length)
 
