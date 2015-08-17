@@ -73,9 +73,7 @@ class makeTorrent:
         data = ''
         for root, subdirs, files in walk(realPath):
             for f in files:
-                subPath = path.relpath(root, start=realPath).split('/')
-                subPath.append(f)
-                subPath = [str(p) for p in subPath]
+                subPath = path.relpath(path.join(root, f), start=realPath).split('/')
                 toGet.append(subPath)
         for pathList in toGet:
             length = 0
