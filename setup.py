@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name='makeTorrent',
-    version='0.13',
+    version='0.14',
     packages=['makeTorrent'],
     install_requires=[
         'bencode',
