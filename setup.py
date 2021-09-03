@@ -7,7 +7,7 @@ setup(
     install_requires=[
         'bencode',
     ],
-    license='Creative Commons Attribution-Noncommercial-Share Alike license',
+    license='MIT',
     description='Basic library for creating torrents',
     long_description=open('README.rst').read(),
     author='Stewart Rutledge',
