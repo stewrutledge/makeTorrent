@@ -21,7 +21,7 @@ To add files, use either the multi_file class or the single_file class
 ```python
 mk.multi_file('/path/to/directory')
 
-with open('my.torrent') as tf:
+with open('my.torrent', 'wb') as tf:
     tf.write(mk.getBencoded())
 ```
 
